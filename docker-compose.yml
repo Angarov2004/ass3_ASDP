@@ -1,0 +1,9 @@
+services:
+  telemetry-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: scientific-telemetry-analyzer:local
+    volumes:
+      - ./output:/output
+    command: ["sample_telemetry.csv", "--output", "/output/summary.json"]
